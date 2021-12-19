@@ -110,9 +110,18 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+
                 if (task.isSuccessful()) {
-                    startActivity(new Intent(MainActivity.this, WeatherApp.class));
-                    progressBar.setVisibility(View.GONE);
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                    if (user.isEmailVerified()){
+                        startActivity(new Intent(MainActivity.this, WeatherApp.class));
+                        progressBar.setVisibility(View.GONE);
+                    }else{
+                        user.sendEmailVerification();
+                        Toast.makeText(MainActivity.this,"Check your email to verify your accout!", Toast.LENGTH_LONG).show();
+                    }
+
                 } else {
                     Toast.makeText(MainActivity.this, "Check your mail to verify your account!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
