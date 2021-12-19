@@ -6,6 +6,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView banner, registerUser;
+    private TextView banner, registerUser,bannerDescription;
     private EditText editTextFullName, editTextCity, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
 
@@ -36,6 +37,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         banner = (TextView) findViewById(R.id.banner);
         banner.setOnClickListener(this);
+
+        bannerDescription  = (TextView) findViewById(R.id.bannerDescription);
+        bannerDescription.setOnClickListener(this);
 
         registerUser = (Button) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
@@ -54,7 +58,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.banner:
+            case R.id.bannerDescription:
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.registerUser:

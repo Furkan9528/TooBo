@@ -23,11 +23,16 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterUser"
-            android:parentActivityName=".MainActivity" />
+            android:name=".ForgotPassword"
+            android:exported="false" />
         <activity
             android:name=".WeatherApp"
             android:exported="false" />
+        <activity
+            android:name=".RegisterUser"
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
