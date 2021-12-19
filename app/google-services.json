@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "267324361753",
+    "firebase_url": "https://auth-ac9ef-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "auth-ac9ef",
+    "storage_bucket": "auth-ac9ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267324361753:android:b02342f1caa7be28e6ee88",
+        "android_client_info": {
+          "package_name": "com.example.fuat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267324361753-ouhmpojd7afame3oht3qojk876tbr96a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh75Ly7_8ES88wlIclTr0dgcM2DIkuan8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267324361753-ouhmpojd7afame3oht3qojk876tbr96a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267324361753:android:f74292f630544036e6ee88",
+        "android_client_info": {
+          "package_name": "com.example.myapplication1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267324361753-ouhmpojd7afame3oht3qojk876tbr96a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh75Ly7_8ES88wlIclTr0dgcM2DIkuan8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267324361753-ouhmpojd7afame3oht3qojk876tbr96a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267324361753:android:3f70d057bfdb95eee6ee88",
+        "android_client_info": {
+          "package_name": "com.example.weatherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267324361753-ouhmpojd7afame3oht3qojk876tbr96a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh75Ly7_8ES88wlIclTr0dgcM2DIkuan8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267324361753-ouhmpojd7afame3oht3qojk876tbr96a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
