@@ -29,7 +29,7 @@ import java.lang.reflect.Type;
 
 public class WeatherApp extends AppCompatActivity implements LocationListener {
 
-    TextView txtCity, txtLastUpdate, txtHumidity, txtDeg, txtDescription, txtTime, txtTemp_min, txtTemp_max;
+    TextView txtCity, txtLastUpdate, txtHumidity, txtDeg, txtDescription, txtTime, txtTemp_min, txtTemp_max, txtSunrise, txtSunset;
     ImageView imageView;
     int MY_PERMISSION = 0;
     LocationManager locationManager;
@@ -52,6 +52,9 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
 
         txtTemp_min = (TextView) findViewById(R.id.temp_min);
         txtTemp_max = (TextView) findViewById(R.id.temp_max);
+        txtSunrise = (TextView) findViewById(R.id.sunrise);
+        txtSunset = (TextView) findViewById(R.id.sunset);
+
 
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -164,9 +167,11 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
             txtLastUpdate.setText(String.format("Last update : %s", Common.getDateNow()));
             txtDescription.setText(String.format("Description: %s",openWeatherMap.getWeather().get(0).getDescription()));
             txtHumidity.setText(String.format("Humidity: %d",openWeatherMap.getMain().getHumidity()));
-            txtTime.setText(String.format("%s/%s,",openWeatherMap.getSys().getSunrise(),openWeatherMap.getSys().getSunset()));
+            txtSunrise.setText(String.format("%.5s,",openWeatherMap.getSys().getSunrise()));
+            txtSunset.setText(String.format("%.5s,",openWeatherMap.getSys().getSunset()));
             txtDeg.setText(String.format("%.2f °C",openWeatherMap.getMain().getTemp()));
             txtTemp_min.setText(String.format("%.2f",openWeatherMap.getMain().getTemp_min()));
+            txtTemp_max.setText(String.format("%.2f",openWeatherMap.getMain().getTemp_max()));
 
             Picasso.get()
                     .load(Common.getImage(openWeatherMap.getWeather().get(0).getIcon()))
