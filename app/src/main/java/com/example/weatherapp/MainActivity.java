@@ -60,7 +60,10 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         forgotPassword.setOnClickListener(this);
 
 
-        //gonder.setOnClickListener(this);
+       /* gonder = (Button) findViewById(R.id.buttongonder);
+        gonder.setOnClickListener(this);
+        */
+
     }
 
     @Override
@@ -75,12 +78,11 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
             case R.id.forgotPassword:
                 startActivity(new Intent(this,ForgotPassword.class));
                 break;
-
         }
     }
 
     /*private void gonder() {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), WeatherApp.class);
         startActivity(intent);
     }*/
 
