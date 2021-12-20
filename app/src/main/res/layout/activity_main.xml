@@ -180,32 +180,165 @@
                         android:text="06:40 AM"
                         android:textSize="14dp" />
                 </LinearLayout>
+
+
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#3CF1EBF1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/wind"
+                        app:tint="#FFFFFF" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wind"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/wind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="06:40 AM"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#3CF1EBF1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/pressure"
+                    app:tint="#FFFFFF" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pressure"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="06:40 AM"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#3CF1EBF1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/humidity"
+                    app:tint="#FFFFFF" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="06:40 AM"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#3CF1EBF1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/info"
+                    app:tint="#FFFFFF" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created By"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Group"
+                    android:textSize="14dp" />
             </LinearLayout>
         </LinearLayout>
-
+        </LinearLayout>
     </RelativeLayout>
-
-
-
-
-
-    <TextView
-        android:id="@+id/text_humidity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:text="text humidity"/>
-
-    <TextView
-        android:id="@+id/text_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:text="text time"/>
 
 
 </LinearLayout>
