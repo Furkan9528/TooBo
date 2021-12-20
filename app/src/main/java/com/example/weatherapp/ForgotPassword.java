@@ -33,6 +33,9 @@ public class ForgotPassword extends AppCompatActivity {
         resetPasswordButton = (Button) findViewById(R.id.resetPassword);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         auth = FirebaseAuth.getInstance();
 
         resetPasswordButton.setOnClickListener(new View.OnClickListener(){
@@ -52,7 +55,7 @@ public class ForgotPassword extends AppCompatActivity {
             return;
         }
 
-        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailEditText.setError("Please provide valid email!");
             emailEditText.requestFocus();
             return;

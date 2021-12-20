@@ -24,6 +24,7 @@
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".WeatherApp"
