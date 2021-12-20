@@ -7,6 +7,7 @@ public class Main {
     private double pressure;
     private int humidity;
 
+
     public double getTemp() {
         return temp;
     }

@@ -25,11 +25,14 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.lang.reflect.Type;
 
 public class WeatherApp extends AppCompatActivity implements LocationListener {
 
-    TextView txtCity, txtLastUpdate, txtHumidity, txtDeg, txtDescription, txtTime;
+    TextView txtCity, txtLastUpdate, txtHumidity, txtDeg, txtDescription, txtTime, txtsunrise, txtsunset, txtTemp_min, txtTemp_max, txtWind, txtPressure;
     ImageView imageView;
     int MY_PERMISSION = 0;
     LocationManager locationManager;
@@ -44,11 +47,19 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
 
         txtCity = (TextView) findViewById(R.id.text_city);
         txtLastUpdate = (TextView) findViewById(R.id.text_lastUpdate);
-        txtHumidity = (TextView) findViewById(R.id.text_humidity);
+        txtHumidity = (TextView) findViewById(R.id.humidity);
+        txtsunrise = (TextView) findViewById(R.id.sunrise);
+        txtsunset = (TextView) findViewById(R.id.sunset);
+        txtTemp_min = (TextView) findViewById(R.id.temp_min);
+        txtTemp_max = (TextView) findViewById(R.id.temp_max);
+        txtWind = (TextView) findViewById(R.id.wind);
+        txtPressure = (TextView) findViewById(R.id.pressure);
+
+
         txtDeg = (TextView) findViewById(R.id.text_deg);
         txtDescription = (TextView) findViewById(R.id.text_description);
-        txtTime = (TextView) findViewById(R.id.text_time);
-        imageView = (ImageView) findViewById(R.id.idImage);
+        //txtTime = (TextView) findViewById(R.id.text_time);
+        //imageView = (ImageView) findViewById(R.id.idImage);
 
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -158,11 +169,18 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
             pd.dismiss();
 
 
+
             txtCity.setText(String.format(" City: %s,%s",openWeatherMap.getName(),openWeatherMap.getSys().getCountry()));
             txtLastUpdate.setText(String.format("Last update : %s", Common.getDateNow()));
             txtDescription.setText(String.format("Description: %s",openWeatherMap.getWeather().get(0).getDescription()));
-            txtHumidity.setText(String.format("Humidity: %d",openWeatherMap.getMain().getHumidity()));
-            txtTime.setText(String.format("%s/%s,",openWeatherMap.getSys().getSunrise(),openWeatherMap.getSys().getSunset()));
+            txtHumidity.setText(String.format("%d",openWeatherMap.getMain().getHumidity()));
+            txtsunrise.setText(String.format("%d",openWeatherMap.getSys().getSunrise()));
+            txtsunset.setText(String.format("%d",openWeatherMap.getSys().getSunset()));
+            txtWind.setText(String.format("%d",openWeatherMap.getWind().getSpeed()));
+            txtPressure.setText(String.format("%d",openWeatherMap.getMain().getPressure()));
+
+
+            //txtTime.setText(String.format("%s/%s,",openWeatherMap.getSys().getSunrise(),openWeatherMap.getSys().getSunset()));
             txtDeg.setText(String.format("Temperature: %.2f °C",openWeatherMap.getMain().getTemp()));
 
             Picasso.get()
