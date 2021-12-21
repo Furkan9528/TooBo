@@ -21,6 +21,16 @@ import androidx.core.app.ActivityCompat;
 import com.example.weatherapp.Common.Common;
 import com.example.weatherapp.Helper.Helper;
 import com.example.weatherapp.Model.OpenWeatherMap;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
@@ -35,6 +45,13 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
     LocationManager locationManager;
     String provider;
     static double lat, lon;
+
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+
+
+
     OpenWeatherMap openWeatherMap = new OpenWeatherMap();
 
     @Override
@@ -54,8 +71,15 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         txtSunrise = (TextView) findViewById(R.id.sunrise);
         txtSunset = (TextView) findViewById(R.id.sunset);
         txtPressure = (TextView) findViewById(R.id.pressure);
-
         txtWind = (TextView) findViewById(R.id.wind);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
 
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -110,13 +134,34 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         locationManager.requestLocationUpdates(provider, 400, 1, this);
     }
 
+
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        lat=location.getLatitude();
-        lon=location.getLongitude();
 
-        new GetWeather().execute(Common.apiRequest(String.valueOf(lat),String.valueOf(lon)));
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+
+                if (userProfile != null) {
+                    String city = userProfile.city;
+                    new GetWeather().execute(Common.apiRequest(String.valueOf(city)));
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
     }
+
+
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -171,8 +216,8 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
             txtSunrise.setText(String.format("%.7s,",openWeatherMap.getSys().getSunrise()));
             txtSunset.setText(String.format("%.7s,",openWeatherMap.getSys().getSunset()));
             txtDeg.setText(String.format("%.0f °C",openWeatherMap.getMain().getTemp()));
-            txtTemp_min.setText(String.format("%.2f",openWeatherMap.getMain().getTemp_min()));
-            txtTemp_max.setText(String.format("%.2f",openWeatherMap.getMain().getTemp_max()));
+            txtTemp_min.setText(String.format("Min temp: %.2f",openWeatherMap.getMain().getTemp_min()));
+            txtTemp_max.setText(String.format("Max temp: %.2f",openWeatherMap.getMain().getTemp_max()));
             txtWind.setText(String.format("%.2f",openWeatherMap.getWind().getSpeed()));
             txtPressure.setText(String.format("%.1f",openWeatherMap.getMain().getPressure()));
 

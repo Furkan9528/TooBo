@@ -14,10 +14,12 @@ public class Common {
 
 
     @NonNull
-    public static String apiRequest(String lat,String lon){
+    public static String apiRequest(String city){
+
         StringBuilder sb= new StringBuilder(API_LINK);
-        sb.append(String.format("?lat=%s&lon=%s&appid=%s&units=metric",lat,lon,API_KEY));
+        sb.append(String.format("?q=%s&appid=%s&units=metric",city,API_KEY));
         return sb.toString();
+
     }
 
     public static String unixTimeStampToDateTime(double unixTimeStamp){

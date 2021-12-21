@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Istanbul"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="35dp" />
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="20 April 2012, 20:08 PM"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 />
             <ImageView
@@ -61,7 +61,7 @@
                 android:layout_gravity="center"
                 android:text="Clear Sky"
                 android:textSize="18dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 />
 
             <TextView
@@ -69,9 +69,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textStyle="bold"
                 android:fontFamily="sans-serif-thin"
                 android:text="29°C"
-                android:textColor="@color/white"
+
+                android:textColor="@color/black"
                 android:textSize="80dp" />
 
             <LinearLayout
@@ -84,7 +86,7 @@
                     android:id="@+id/temp_min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:text="Min Temp: 05:05 AM" />
                 <Space
@@ -95,7 +97,7 @@
                     android:id="@+id/temp_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
                     android:text="Max Temp: 05:05 PM" />
             </LinearLayout>
@@ -125,7 +127,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/sunrise"
-                        app:tint="#FFFFFF" />
+                        app:tint="@color/black" />
 
                     <Space
                         android:layout_width="wrap_content"
@@ -161,7 +163,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/sunset"
-                        app:tint="#FFFFFF" />
+                        app:tint="@color/black" />
 
                     <Space
                         android:layout_width="wrap_content"
@@ -200,7 +202,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/wind"
-                        app:tint="#FFFFFF" />
+                        app:tint="@color/black" />
 
                     <Space
                         android:layout_width="wrap_content"
@@ -244,7 +246,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/pressure"
-                    app:tint="#FFFFFF" />
+                    app:tint="@color/black" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -281,7 +283,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/humidity"
-                    app:tint="#FFFFFF" />
+                    app:tint="@color/black" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -318,7 +320,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/info"
-                    app:tint="#FFFFFF" />
+                    app:tint="@color/black" />
 
                 <Space
                     android:layout_width="wrap_content"
