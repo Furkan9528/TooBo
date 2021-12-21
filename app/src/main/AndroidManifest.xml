@@ -22,6 +22,7 @@
         android:theme="@style/Theme.WeatherApp">
         <activity
             android:name=".ProfileActivity"
+            android:parentActivityName=".WeatherApp"
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"

@@ -3,6 +3,7 @@ package com.example.weatherapp;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
@@ -96,22 +98,17 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
                         break;
 
                     case R.id.settings:
-                        Log.i("MENU_DRAWER_TAG", "Home item is clicked");
-                        drawerLayout.closeDrawer(GravityCompat.START);
+                        startActivity(new Intent(WeatherApp.this, ProfileActivity.class));
                         break;
 
-                    case R.id.logout:
-                        Log.i("MENU_DRAWER_TAG", "Home item is clicked");
-                        drawerLayout.closeDrawer(GravityCompat.START);
+                    case R.id.signOut:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(WeatherApp.this, MainActivity.class));
                         break;
                 }
                 return true;
             }
         });
-
-
-
-
 
         txtCity = (TextView) findViewById(R.id.text_city);
         txtLastUpdate = (TextView) findViewById(R.id.text_lastUpdate);
