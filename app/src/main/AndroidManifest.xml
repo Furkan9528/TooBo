@@ -29,7 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".WeatherApp"
-            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterUser"

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="menu_Open">Open</string>
+    <string name="close_menu">Close </string>
 </resources>

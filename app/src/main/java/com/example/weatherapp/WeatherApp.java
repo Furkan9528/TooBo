@@ -11,18 +11,24 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.weatherapp.Common.Common;
 import com.example.weatherapp.Helper.Helper;
 import com.example.weatherapp.Model.OpenWeatherMap;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -51,13 +57,61 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
     private String userID;
 
 
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    ActionBarDrawerToggle actionBarDrawerToggle;
 
     OpenWeatherMap openWeatherMap = new OpenWeatherMap();
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        drawerLayout = findViewById(R.id.activity_main);
+        navigationView = findViewById(R.id.navigationView);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_Open,R.string.close_menu);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId()){
+                    case R.id.nav_home:
+                        Log.i("MENU_DRAWER_TAG", "Home item is clicked");
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.settings:
+                        Log.i("MENU_DRAWER_TAG", "Home item is clicked");
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.logout:
+                        Log.i("MENU_DRAWER_TAG", "Home item is clicked");
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                }
+                return true;
+            }
+        });
+
+
+
+
 
         txtCity = (TextView) findViewById(R.id.text_city);
         txtLastUpdate = (TextView) findViewById(R.id.text_lastUpdate);
@@ -72,9 +126,6 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         txtSunset = (TextView) findViewById(R.id.sunset);
         txtPressure = (TextView) findViewById(R.id.pressure);
         txtWind = (TextView) findViewById(R.id.wind);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -99,6 +150,9 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         Location location = locationManager.getLastKnownLocation(provider);
         if(location == null)
             Log.e("TAG","No location");
+
+
+
 
     }
 
