@@ -53,7 +53,6 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
     LocationManager locationManager;
     String provider;
     static double lat, lon;
-
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
@@ -63,16 +62,13 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
     NavigationView navigationView;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
-
     OpenWeatherMap openWeatherMap = new OpenWeatherMap();
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if(actionBarDrawerToggle.onOptionsItemSelected(item)){
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -97,8 +93,12 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.settings:
+                    case R.id.info:
                         startActivity(new Intent(WeatherApp.this, ProfileActivity.class));
+                        break;
+
+                    case R.id.settings:
+                        startActivity(new Intent(WeatherApp.this, InfoActivity.class ));
                         break;
 
                     case R.id.signOut:
@@ -147,10 +147,6 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         Location location = locationManager.getLastKnownLocation(provider);
         if(location == null)
             Log.e("TAG","No location");
-
-
-
-
     }
 
     @Override
@@ -206,13 +202,7 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
 
             }
         });
-
-
-
-
     }
-
-
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -232,8 +222,6 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
     private class GetWeather extends AsyncTask<String,Void,String> {
 
         ProgressDialog pd= new ProgressDialog(WeatherApp.this);
-
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
