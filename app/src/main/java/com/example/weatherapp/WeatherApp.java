@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -14,6 +15,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +31,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.weatherapp.Common.Common;
 import com.example.weatherapp.Helper.Helper;
+import com.example.weatherapp.Model.Main;
 import com.example.weatherapp.Model.OpenWeatherMap;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -78,6 +82,26 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Button alert = (Button) findViewById(R.id.notifications);
+        alert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog alertDialog=new AlertDialog.Builder(WeatherApp.this).create();
+                alertDialog.setTitle("Alert");
+                alertDialog.setMessage("une alerte");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "ok",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
+
+
         drawerLayout = findViewById(R.id.activity_main);
         navigationView = findViewById(R.id.navigationView);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_Open,R.string.close_menu);
@@ -107,6 +131,7 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
 
                     case R.id.notifications:
                         Toast.makeText(WeatherApp.this, "Check your mail to verify your account!", Toast.LENGTH_LONG).show();
+
                         break;
 
                     case R.id.signOut:
@@ -116,7 +141,9 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
                 }
                 return true;
             }
+
         });
+
 
         txtCity = (TextView) findViewById(R.id.text_city);
         txtLastUpdate = (TextView) findViewById(R.id.text_lastUpdate);
