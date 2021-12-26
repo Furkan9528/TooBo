@@ -83,24 +83,6 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         setContentView(R.layout.activity_main);
 
 
-        Button alert = (Button) findViewById(R.id.notifications);
-        alert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog alertDialog=new AlertDialog.Builder(WeatherApp.this).create();
-                alertDialog.setTitle("Alert");
-                alertDialog.setMessage("une alerte");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "ok",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                alertDialog.show();
-            }
-        });
-
 
         drawerLayout = findViewById(R.id.activity_main);
         navigationView = findViewById(R.id.navigationView);
@@ -130,8 +112,17 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
                         break;
 
                     case R.id.notifications:
-                        Toast.makeText(WeatherApp.this, "Check your mail to verify your account!", Toast.LENGTH_LONG).show();
-
+                        AlertDialog alertDialog=new AlertDialog.Builder(WeatherApp.this).create();
+                        alertDialog.setTitle("Alert");
+                        alertDialog.setMessage("une alerte");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "ok",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
                         break;
 
                     case R.id.signOut:
