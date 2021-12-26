@@ -113,8 +113,8 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
 
                     case R.id.notifications:
                         AlertDialog alertDialog=new AlertDialog.Builder(WeatherApp.this).create();
-                        alertDialog.setTitle("Alert");
-                        alertDialog.setMessage("une alerte");
+                        alertDialog.setTitle("Notifications");
+                        alertDialog.setMessage("Enabled");
                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "ok",
                                 new DialogInterface.OnClickListener() {
                                     @Override
