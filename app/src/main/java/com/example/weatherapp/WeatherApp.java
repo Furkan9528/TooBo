@@ -1,6 +1,7 @@
 package com.example.weatherapp;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -83,6 +84,9 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -99,6 +103,10 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
 
                     case R.id.settings:
                         startActivity(new Intent(WeatherApp.this, InfoActivity.class ));
+                        break;
+
+                    case R.id.notifications:
+                        Toast.makeText(WeatherApp.this, "Check your mail to verify your account!", Toast.LENGTH_LONG).show();
                         break;
 
                     case R.id.signOut:
