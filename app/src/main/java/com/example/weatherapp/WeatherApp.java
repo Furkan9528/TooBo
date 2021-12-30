@@ -49,18 +49,22 @@ import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Type;
+import java.util.WeakHashMap;
 
 public class WeatherApp extends AppCompatActivity implements LocationListener {
 
-    TextView txtCity, txtLastUpdate, txtHumidity, txtDeg, txtDescription, txtTemp_min, txtTemp_max, txtSunrise, txtSunset, txtWind, txtPressure ;
+    TextView txtCity, txtLastUpdate, txtHumidity, txtDeg, txtDescription, txtTemp_min, txtTemp_max, txtSunrise, txtSunset, txtWind, txtPressure;
     ImageView imageView;
+    TextView usernameHeader, emailHeader;
     int MY_PERMISSION = 0;
     LocationManager locationManager;
     String provider;
     static double lat, lon;
     private FirebaseUser user;
+    private FirebaseAuth mAuth;
     private DatabaseReference reference;
     private String userID;
+    String usernameHead,emailHead;
 
 
     DrawerLayout drawerLayout;
@@ -82,18 +86,23 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         drawerLayout = findViewById(R.id.activity_main);
         navigationView = findViewById(R.id.navigationView);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_Open,R.string.close_menu);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
+
+
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+
+
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -133,8 +142,8 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
                 return true;
             }
 
-        });
 
+        });
 
         txtCity = (TextView) findViewById(R.id.text_city);
         txtLastUpdate = (TextView) findViewById(R.id.text_lastUpdate);
@@ -173,7 +182,27 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         Location location = locationManager.getLastKnownLocation(provider);
         if(location == null)
             Log.e("TAG","No location");
+
+
+        updateNavHeader();
+
     }
+
+
+
+   public void updateNavHeader() {
+
+       navigationView = findViewById(R.id.navigationView);
+       View headerView = navigationView.getHeaderView(0);
+
+       usernameHeader = headerView.findViewById(R.id.header_title);
+       emailHeader = headerView.findViewById(R.id.email_title);
+
+       usernameHeader.setText(user.getDisplayName());
+       emailHeader.setText(user.getEmail());
+
+   }
+
 
     @Override
     protected void onPause() {
@@ -212,6 +241,7 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
     public void onLocationChanged(@NonNull Location location) {
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
@@ -220,12 +250,11 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
                     String city = userProfile.city;
                     new GetWeather().execute(Common.apiRequest(String.valueOf(city)));
                 }
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(WeatherApp.this, "Something wrong happened!", Toast.LENGTH_LONG ).show();
             }
         });
     }
