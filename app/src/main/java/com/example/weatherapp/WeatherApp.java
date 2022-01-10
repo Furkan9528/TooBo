@@ -302,18 +302,17 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
             openWeatherMap=gson.fromJson(s, mType);
             pd.dismiss();
 
-
             txtCity.setText(String.format("%s,%s",openWeatherMap.getName(),openWeatherMap.getSys().getCountry()));
             txtLastUpdate.setText(String.format("%s", Common.getDateNow()));
             txtDescription.setText(String.format("%s",openWeatherMap.getWeather().get(0).getDescription()));
-            txtHumidity.setText(String.format("%d",openWeatherMap.getMain().getHumidity()));
-            txtSunrise.setText(String.format("%.7s,",openWeatherMap.getSys().getSunrise()));
-            txtSunset.setText(String.format("%.7s,",openWeatherMap.getSys().getSunset()));
+            txtHumidity.setText(String.format("%d %%",openWeatherMap.getMain().getHumidity()));
+            txtSunrise.setText(String.format("%.7s AM",Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise())));
+            txtSunset.setText(String.format("%.7s PM",Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
             txtDeg.setText(String.format("%.0f °C",openWeatherMap.getMain().getTemp()));
-            txtTemp_min.setText(String.format("Min temp: %.2f",openWeatherMap.getMain().getTemp_min()));
-            txtTemp_max.setText(String.format("Max temp: %.2f",openWeatherMap.getMain().getTemp_max()));
-            txtWind.setText(String.format("%.2f",openWeatherMap.getWind().getSpeed()));
-            txtPressure.setText(String.format("%.1f",openWeatherMap.getMain().getPressure()));
+            txtTemp_min.setText(String.format("Min temp: %.2f °C",openWeatherMap.getMain().getTemp_min()));
+            txtTemp_max.setText(String.format("Max temp: %.2f °C",openWeatherMap.getMain().getTemp_max()));
+            txtWind.setText(String.format("%.2f km/h",openWeatherMap.getWind().getSpeed()));
+            txtPressure.setText(String.format("%.1f hPa",openWeatherMap.getMain().getPressure()));
 
 
             Picasso.get()
