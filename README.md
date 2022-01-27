@@ -1,6 +1,6 @@
 # :sunny: TooBo - Weather- App :cloud:
 
-![alt text](./image/Weather-App.png)
+![alt text](./image/Weather-App-1.png)
 ## A Propos
 Application de prévisions météo utilisant Java pour Android.
 Ce projet porte sur la création d'une application météo Android à l'aide de Java. Pour obtenir les informations météorologiques, j'ai utilisé l'API OpenWeatherMap. Des informations telles que la température, la pression, l'humidité, l'état météorologique, l'heure du lever et du coucher du soleil, etc. sont transmises à partir de l'API.
