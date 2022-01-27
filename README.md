@@ -5,7 +5,7 @@
 Application de prévisions météo utilisant Java pour Android.
 Ce projet porte sur la création d'une application météo Android à l'aide de Java. Pour obtenir les informations météorologiques, nous avons utilisé l'API OpenWeatherMap. Des informations telles que la température, la pression, l'humidité, l'état météorologique, l'heure du lever et du coucher du soleil, etc. sont transmises à partir de l'API.
 
-
+Vous devez d'abord vous connecter à l'application. Il existe également des options telles que le mot de passe oublié. Ensuite, vous pouvez connaître les conditions météorologiques de la ville que vous souhaitez dans votre compte personnel, consulter et modifier vos informations personnelles.
 
 <img src="https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png" width="240" height="250" />  <img src="https://raw.github.com/tomkp/weather-icons/master/png/sunny.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/sunny.png" width="240" height="250" />  <img src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20rain.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20rain.png" width="240" height="250" /> 
 
