@@ -2,7 +2,7 @@
 	pplication de prévisions météo utilisant Java pour Android.
 
 
-##- Exigences
+## - Exigences
 
 	Android studio last version
 	JDK 11
@@ -13,7 +13,7 @@
 
 ![alt text](./image/Weather-App.png)
 
-##- Dépendances externes
+## - Dépendances externes
 
 	Voici les API/services externes utilisés pour cette application :
 	
