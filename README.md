@@ -1,4 +1,4 @@
-# :sunny: TooBo - Weather- App :cloud:
+# :sunny: TooBo - Weather App :cloud:
 
 ![alt text](./image/Weather-App-1.png)
 ## A Propos
