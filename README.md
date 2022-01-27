@@ -1,7 +1,11 @@
 # :sunny: TooBo - Weather- App :cloud:
-## Sunny Intervals
-![sunny intervals](https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png)
+
+![alt text](./image/Weather-App.png)
+
+
+## A Propos
 Application de prévisions météo utilisant Java pour Android.
+Ce projet porte sur la création d'une application météo Android à l'aide de Java. Pour obtenir les informations météorologiques, j'ai utilisé l'API OpenWeatherMap. Des informations telles que la température, la pression, l'humidité, l'état météorologique, l'heure du lever et du coucher du soleil, etc. sont transmises à partir de l'API.
 
 
 ## Exigences
@@ -13,8 +17,7 @@ Application de prévisions météo utilisant Java pour Android.
 * Material Components 1.5.0-alpha04
 * Taille de la machine virtuelle : 1440 x 3040 ou 1080 x 2160
 
-	![alt text](./image/Weather-App.png)
-
+	
 ## Dépendances externes
 
 Voici les API/services externes utilisés pour cette application :
@@ -23,3 +26,9 @@ Plus précisément, nous utilisons la fonction Données météorologiques actuel
 * Un service de session privée est fourni aux utilisateurs. `( https://firebase.google.com/ )`
 * Picasso - https://square.github.io/picasso/ Utilisé pour charger des images dans l'application de manière simple.
 
+
+
+
+
+
+![sunny intervals](https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png)
