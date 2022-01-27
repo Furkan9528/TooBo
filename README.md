@@ -1,5 +1,5 @@
 # TooBo - Weather- App
-	Application de prévisions météo utilisant Java pour Android.
+Application de prévisions météo utilisant Java pour Android.
 
 
 ## Exigences
@@ -17,4 +17,4 @@
 
 Voici les API/services externes utilisés pour cette application :
 * OpenWeatherMap (https://openweathermap.org/current) La principale API utilisée pour les données météorologiques.
-* Plus précisément, nous utilisons la fonction Données météorologiques actuelles. 
+Plus précisément, nous utilisons la fonction Données météorologiques actuelles. 
