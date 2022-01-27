@@ -7,8 +7,7 @@ Ce projet porte sur la création d'une application météo Android à l'aide de 
 
 
 
-<img src="https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png" width="235" height="250" />  <img src="https://raw.github.com/tomkp/weather-icons/master/png/sunny.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/sunny.png" width="235" height="250" />  <img src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20rain.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20rain.png" width="235" height="250" /> <img src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20snow.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20snow.png" width="235" height="250" />
-
+<img src="https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/sunny%20intervals.png" width="240" height="250" />  <img src="https://raw.github.com/tomkp/weather-icons/master/png/sunny.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/sunny.png" width="240" height="250" />  <img src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20rain.png" data-canonical-src="https://raw.github.com/tomkp/weather-icons/master/png/heavy%20rain.png" width="240" height="250" /> 
 
 
 
