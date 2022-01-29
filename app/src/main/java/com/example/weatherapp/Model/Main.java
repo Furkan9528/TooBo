@@ -7,6 +7,13 @@ public class Main {
     private double pressure;
     private int humidity;
 
+    public enum Temp {
+        METRIC,
+        IMPERIAL;
+    }
+
+
+
     public double getTemp() {
         return temp;
     }

@@ -2,6 +2,8 @@ package com.example.weatherapp.Common;
 
 import androidx.annotation.NonNull;
 
+import com.example.weatherapp.Model.Main;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,13 +13,14 @@ public class Common {
     public static String API_KEY ="d293fd094ba23743cd8205c2ea54f25f";
     public static String API_LINK= "http://api.openweathermap.org/data/2.5/weather";
 
+    public static Main.Temp temp = Main.Temp.IMPERIAL;
 
 
     @NonNull
     public static String apiRequest(String city){
 
         StringBuilder sb= new StringBuilder(API_LINK);
-        sb.append(String.format("?q=%s&appid=%s&units=metric",city,API_KEY));
+        sb.append(String.format("?q=%s&appid=%s&units=%s",city,API_KEY,temp));
         return sb.toString();
 
     }
