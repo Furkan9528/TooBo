@@ -27,6 +27,10 @@
             android:exported="false"
             android:parentActivityName=".WeatherApp" />
         <activity
+            android:name=".CurrentLocation"
+            android:exported="false"
+            android:parentActivityName=".WeatherApp" />
+        <activity
             android:name=".ForgotPassword"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
