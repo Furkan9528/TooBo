@@ -24,13 +24,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.weatherapp.Common.Common;
+import com.example.weatherapp.Common.Common2;
 import com.example.weatherapp.Helper.Helper;
 import com.example.weatherapp.Model.Main;
 import com.example.weatherapp.Model.OpenWeatherMap;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
@@ -60,10 +58,10 @@ public class CurrentLocation extends AppCompatActivity implements LocationListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.current_location);
-        drawerLayout = findViewById(R.id.activity_main);
+        drawerLayout = findViewById(R.id.current_location);
+
         navigationView = findViewById(R.id.navigationView);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_Open,R.string.close_menu);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -142,7 +140,7 @@ public class CurrentLocation extends AppCompatActivity implements LocationListen
         lat = location.getLatitude();
         lon = location.getLongitude();
 
-        new GetWeather().execute(Common.apiRequest(String.valueOf(lat)), String.valueOf(lon));
+        new GetWeather().execute(Common2.apiRequest(String.valueOf(lat), String.valueOf(lon)));
     }
 
     @Override
@@ -184,24 +182,20 @@ public class CurrentLocation extends AppCompatActivity implements LocationListen
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            if (s.contains("Error: Not found city")) {
-                pd.dismiss();
-                return;
-            }
-            Gson gson = new Gson();
-            Type mType = new TypeToken<OpenWeatherMap>() {
-            }.getType();
-            openWeatherMap = gson.fromJson(s, mType);
+
+            Gson gson=new Gson();
+            Type mType= new TypeToken<OpenWeatherMap>(){}.getType();
+            openWeatherMap=gson.fromJson(s, mType);
             pd.dismiss();
 
 
-            if(Common.temp == Main.Temp.METRIC) {
+            if(Common2.temp == Main.Temp.METRIC) {
                 txtCity.setText(String.format("%s,%s", openWeatherMap.getName(), openWeatherMap.getSys().getCountry()));
-                txtLastUpdate.setText(String.format("%s", Common.getDateNow()));
+                txtLastUpdate.setText(String.format("%s", Common2.getDateNow()));
                 txtDescription.setText(String.format("%s", openWeatherMap.getWeather().get(0).getDescription()));
                 txtHumidity.setText(String.format("%d %%", openWeatherMap.getMain().getHumidity()));
-                txtSunrise.setText(String.format("%.7s AM", Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise())));
-                txtSunset.setText(String.format("%.7s PM", Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
+                txtSunrise.setText(String.format("%.7s AM", Common2.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise())));
+                txtSunset.setText(String.format("%.7s PM", Common2.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
                 txtDeg.setText(String.format("%.0f °C", openWeatherMap.getMain().getTemp()));
                 txtTemp_min.setText(String.format("Min temp: %.2f °C", openWeatherMap.getMain().getTemp_min()));
                 txtTemp_max.setText(String.format("Max temp: %.2f °C", openWeatherMap.getMain().getTemp_max()));
@@ -210,17 +204,21 @@ public class CurrentLocation extends AppCompatActivity implements LocationListen
             }
             else{
                 txtCity.setText(String.format("%s,%s",openWeatherMap.getName(),openWeatherMap.getSys().getCountry()));
-                txtLastUpdate.setText(String.format("%s", Common.getDateNow()));
+                txtLastUpdate.setText(String.format("%s", Common2.getDateNow()));
                 txtDescription.setText(String.format("%s",openWeatherMap.getWeather().get(0).getDescription()));
                 txtHumidity.setText(String.format("%d %%",openWeatherMap.getMain().getHumidity()));
-                txtSunrise.setText(String.format("%.7s AM",Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise())));
-                txtSunset.setText(String.format("%.7s PM",Common.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
+                txtSunrise.setText(String.format("%.7s AM",Common2.unixTimeStampToDateTime(openWeatherMap.getSys().getSunrise())));
+                txtSunset.setText(String.format("%.7s PM",Common2.unixTimeStampToDateTime(openWeatherMap.getSys().getSunset())));
                 txtDeg.setText(String.format("%.0f °F",openWeatherMap.getMain().getTemp()));
                 txtTemp_min.setText(String.format("Min temp: %.2f °F",openWeatherMap.getMain().getTemp_min()));
                 txtTemp_max.setText(String.format("Max temp: %.2f °F",openWeatherMap.getMain().getTemp_max()));
                 txtWind.setText(String.format("%.2f m/h",openWeatherMap.getWind().getSpeed()));
                 txtPressure.setText(String.format("%.1f hPa",openWeatherMap.getMain().getPressure()));
             }
+
+            Picasso.get()
+                    .load(Common.getImage(openWeatherMap.getWeather().get(0).getIcon()))
+                    .into(imageView);
         }
     }
 }
