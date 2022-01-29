@@ -60,17 +60,14 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
     int MY_PERMISSION = 0;
     LocationManager locationManager;
     String provider;
-    static double lat, lon;
     private FirebaseUser user;
     private FirebaseAuth mAuth;
     private DatabaseReference reference;
     private String userID;
-    String usernameHead,emailHead;
 
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
     OpenWeatherMap openWeatherMap = new OpenWeatherMap();
 
@@ -93,7 +90,6 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
 
 
@@ -109,6 +105,11 @@ public class WeatherApp extends AppCompatActivity implements LocationListener {
 
                 switch(item.getItemId()){
                     case R.id.nav_home:
+                        Log.i("MENU_DRAWER_TAG", "Home item is clicked");
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.current_location:
                         Log.i("MENU_DRAWER_TAG", "Home item is clicked");
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
