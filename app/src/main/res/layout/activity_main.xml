@@ -47,7 +47,7 @@
                 android:id="@+id/text_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Istanbul"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="35dp" />
 
@@ -55,7 +55,7 @@
                 android:id="@+id/text_lastUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="20 April 2012, 20:08 PM"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-thin"
-                android:text="29°C"
+                android:text=""
                 android:textColor="@color/black"
 
                 android:textSize="80dp"
@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Clear Sky"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
@@ -105,7 +105,7 @@
                     android:id="@+id/temp_min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Min Temp: 05:05 AM"
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 
@@ -117,7 +117,7 @@
                     android:id="@+id/temp_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Max Temp: 05:05 PM"
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="18dp" />
             </LinearLayout>
@@ -158,14 +158,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sunrise"
+                        android:text=""
                         android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/sunrise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textSize="14dp" />
 
                 </LinearLayout>
@@ -196,14 +196,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sunset"
+                        android:text=""
                         android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/sunset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -234,14 +234,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wind"
+                        android:text=""
                         android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/wind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textSize="14dp" />
                 </LinearLayout>
             </LinearLayout>
@@ -278,14 +278,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pressure"
+                        android:text=""
                         android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/pressure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -315,14 +315,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Humidity"
+                        android:text=""
                         android:textSize="12dp" />
 
                     <TextView
                         android:id="@+id/humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -352,13 +352,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Created By"
+                        android:text=""
                         android:textSize="12dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Best Group"
+                        android:text=""
                         android:textSize="14dp" />
                 </LinearLayout>
             </LinearLayout>

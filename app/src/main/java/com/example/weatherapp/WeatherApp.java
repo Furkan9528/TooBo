@@ -33,7 +33,6 @@ import com.example.weatherapp.Common.Common;
 import com.example.weatherapp.Helper.Helper;
 import com.example.weatherapp.Model.Main;
 import com.example.weatherapp.Model.OpenWeatherMap;
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;

@@ -34,10 +34,25 @@
         <entry key="..\:/Users/furkan/Documents/GitHub/TooBo/app/src/main/res/menu/main_menu.xml" value="0.264" />
         <entry key="..\:/Users/furkan/Documents/GitHub/TooBo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
         <entry key="..\:/Users/furkan/Documents/GitHub/TooBo/app/src/main/res/xml/network_security_config.xml" value="0.1" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/bg_gradient.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_logout.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/drawable/ic_menu.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/activity_authentication.xml" value="0.11594202898550725" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/activity_forgotpassword.xml" value="0.11005434782608696" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/activity_info.xml" value="0.11594202898550725" />
         <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/activity_main.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/activity_profile.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/activity_register_user.xml" value="0.11594202898550725" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/current_location.xml" value="0.1" />
         <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/layout/header_menu.xml" value="0.10144927536231885" />
-        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/menu/main_menu.xml" value="0.1796875" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/Users/hacer/OneDrive/Documents/GitHub/TooBo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19583333333333333" />
       </map>
     </option>
   </component>

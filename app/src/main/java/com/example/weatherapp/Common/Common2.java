@@ -13,7 +13,7 @@ public class Common2 {
     public static String API_KEY ="d293fd094ba23743cd8205c2ea54f25f";
     public static String API_LINK= "http://api.openweathermap.org/data/2.5/weather";
 
-    public static Main.Temp temp = Main.Temp.IMPERIAL;
+    public static Main.Temp temp = Main.Temp.METRIC;
 
 
     @NonNull

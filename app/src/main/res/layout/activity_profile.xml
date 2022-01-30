@@ -110,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="37dp"
-        android:text="Istanbul"
+        android:text=""
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="@+id/fullNameTitle"
         app:layout_constraintStart_toEndOf="@+id/cityInfo"
