@@ -23,7 +23,6 @@ import android.widget.TextView;
 import com.example.weatherapp.Common.Common;
 import com.example.weatherapp.Common.Common2;
 import com.example.weatherapp.Helper.Helper;
-import com.example.weatherapp.Model.Coord;
 import com.example.weatherapp.Model.Main;
 import com.example.weatherapp.Model.OpenWeatherMap;
 import com.example.weatherapp.R;
@@ -52,8 +51,7 @@ public class CurrentLocation extends AppCompatActivity implements LocationListen
     OpenWeatherMap openWeatherMap = new OpenWeatherMap();
 
 
-    public static double lat,lon;
-    Coord latt, lonn;
+    static double lat, lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,8 +134,8 @@ public class CurrentLocation extends AppCompatActivity implements LocationListen
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        lat = latt.getLat();
-        lon = lonn.getLon();
+        lat = location.getLatitude();
+        lon = location.getLongitude();
 
         new GetWeather().execute(Common2.apiRequest(String.valueOf(lat), String.valueOf(lon)));
     }
