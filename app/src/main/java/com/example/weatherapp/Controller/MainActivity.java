@@ -1,14 +1,10 @@
-package com.example.weatherapp;
+package com.example.weatherapp.Controller;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
+
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,16 +12,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
-import com.example.weatherapp.Model.Main;
+
+import com.example.weatherapp.User.ForgotPassword;
+import com.example.weatherapp.R;
+import com.example.weatherapp.User.RegisterUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
 
@@ -78,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                 userLogin();
                 break;
             case R.id.forgotPassword:
-                startActivity(new Intent(this,ForgotPassword.class));
+                startActivity(new Intent(this, ForgotPassword.class));
                 break;
         }
     }

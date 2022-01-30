@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.User;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.weatherapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
