@@ -19,30 +19,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp">
         <activity
-            android:name=".User.InfoActivity"
-            android:parentActivityName=".Controller.WeatherApp"
+            android:name=".InfoActivity"
+            android:parentActivityName=".WeatherApp"
             android:exported="false" />
         <activity
-            android:name=".User.ProfileActivity"
+            android:name=".ProfileActivity"
             android:exported="false"
-            android:parentActivityName=".Controller.WeatherApp" />
+            android:parentActivityName=".WeatherApp" />
         <activity
-            android:name=".Location.CurrentLocation"
+            android:name=".CurrentLocation"
             android:exported="false"
-            android:parentActivityName=".Controller.WeatherApp" />
+            android:parentActivityName=".WeatherApp" />
         <activity
-            android:name=".User.ForgotPassword"
+            android:name=".ForgotPassword"
             android:exported="false"
-            android:parentActivityName=".Controller.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Controller.WeatherApp"
+            android:name=".WeatherApp"
             android:exported="false" />
         <activity
-            android:name=".User.RegisterUser"
+            android:name=".RegisterUser"
             android:exported="false"
-            android:parentActivityName=".Controller.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Controller.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
